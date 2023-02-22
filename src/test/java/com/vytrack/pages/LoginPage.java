@@ -47,7 +47,7 @@ public class LoginPage extends BasePage {
             usernameValue=ConfigurationReader.getProperty("salesmanager.username");
         }else if (role.equalsIgnoreCase("driver")){
             usernameValue=ConfigurationReader.getProperty("driver.username");
-        }else {
+        }else {        // left only:  store manager
             usernameValue=ConfigurationReader.getProperty("storemanager.username");
         }
 
