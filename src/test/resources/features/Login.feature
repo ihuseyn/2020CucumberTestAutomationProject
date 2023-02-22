@@ -25,7 +25,7 @@ Feature: As user, I want to be able to
     Then user should see dashboard page
 
   @s_o
-  Scenario Outline:  Parametrized login
+  Scenario Outline:  Parametrized login <role>
     When user logs in as a "<role>"
     Then user should see dashboard page
 
@@ -35,11 +35,35 @@ Feature: As user, I want to be able to
       | store manager |
 
 
+  @with_two_columns
+  Scenario Outline:  Parametrized login <role>
+    When user logs in as a "<role>"
+    Then user should see "<page_title>" page
+
+    Examples: roles & pageTitle
+      | role          | page_title |
+      | sales manager | Dashboard  |
+      | store manager | Dashboard  |
+      | driver        | Dashboard  |
+
+
   @negative_login          #  @firefox ( if u want to switch auto driver )
   Scenario: Invalid password
     # Given user is on the landing
     When user logs in with "storemanager85" username and "wrong" password
     Then user verifies that "Invalid user name or password." message is displayed
+
+  @negative_scenario_output
+  Scenario Outline: Invalid password <username> <password>
+    When user logs in with "<username>" username and "<password>" password
+    Then user verifies that "<message>" message is displayed
+
+    Examples: data set
+      | username | password | message                        |
+      | wrong213 | bad      | Invalid user name or password. |
+      | wrong32  | bad      | Invalid user name or password. |
+      | wrong12  | bad      | Invalid user name or password. |
+
 
 
 

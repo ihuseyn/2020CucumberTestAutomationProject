@@ -8,12 +8,16 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)  // this is from jUnit 4
 
 @CucumberOptions(
-   features ="src/test/resources/features",// {you can add many other sources-if you need }
+
+        plugin={
+           "rerun:target/rerun.txt"
+        },
+        features ="src/test/resources/features",// {you can add many other sources-if you need }
         glue="com/vytrack/step_definitions",
         dryRun =false,
         //tags="@parametrized_test",
        // tags="@negative_login or @parametrized_test",
-       tags="@s_o",
+       tags="@with_two_columns",
         publish=true
 
 )
