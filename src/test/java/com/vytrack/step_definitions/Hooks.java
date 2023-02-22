@@ -4,12 +4,14 @@ import com.vytrack.utils.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before (order = 0)
+    @Before
     public void setup( Scenario scenario ){
        /* scenario.getSourceTagNames().forEach ( tag-> {
 
@@ -33,7 +35,12 @@ public class Hooks {
     }
 
     @After  // comes from cucumber
-    public void teardown(){
+    public void teardown(Scenario scenario){
+        if (scenario.isFailed()){
+            byte[] data= ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
+            scenario.attach( data,"image/png",scenario.getName() );
+        }
+
         Driver.closeDriver();
         System.out.println("End of the execution");
     }

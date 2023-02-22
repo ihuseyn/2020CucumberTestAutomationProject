@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.LoginPage;
+import com.vytrack.utils.BrowserUtils;
 import com.vytrack.utils.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,7 +19,7 @@ public class LoginStepDefinitions {
     @When("user logs in")
     public void user_logs_in() throws InterruptedException {
         loginPage.login();
-        Thread.sleep(4000);
+        BrowserUtils.wait(3);
     }
     @Then("user should see dashboard page")
     public void user_should_see_dashboard_page() {
@@ -31,6 +32,7 @@ public class LoginStepDefinitions {
     @When("user logs in as a {string}")
     public void user_logs_in_as_a(String string) {
         loginPage.login(string);
+        BrowserUtils.wait(3);
     }
 
     // String string="storemanager85"
@@ -44,8 +46,9 @@ public class LoginStepDefinitions {
     //user verifies that "Invalid user name or password." message is displayed
     @Then("user verifies that {string} message is displayed")
     public void user_verifies_that_message_is_displayed(String expected) {
-        String act=loginPage.getWarningMessageText();
-        Assert.assertEquals(expected,act);
+        String actual=loginPage.getWarningMessageText();
+        BrowserUtils.wait(3);
+        Assert.assertEquals("Title doesn't match", expected,actual);
 
     }
 

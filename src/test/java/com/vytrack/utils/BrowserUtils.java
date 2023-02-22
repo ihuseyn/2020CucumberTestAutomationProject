@@ -1,9 +1,11 @@
 package com.vytrack.utils;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.FileOutputStream;
+import java.util.Date;
 
 public class BrowserUtils {
 
@@ -35,4 +37,17 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.attributeToBe(element,"value",txt));
         System.out.println("Entering txt: "+txt);
     }
+
+
+    /*
+     public static void takeScreenShot (String name){
+        Date date=new Date();
+        String path=System.getProperty("user.dir")+"/screenshots";
+        TakesScreenshot takesScreenshot=( TakesScreenshot ) Driver.getDriver();
+        byte[] data=takesScreenshot.getScreenshotAs(OutputType.BYTES);
+        try (FileOutputStream outputStream=new FileOutputStream()){
+        }
+    }
+     */ //screenshot halfway writtencode
+
 }

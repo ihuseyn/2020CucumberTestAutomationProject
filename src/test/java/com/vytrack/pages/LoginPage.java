@@ -5,6 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.SplittableRandom;
+
 public class LoginPage extends BasePage {
 
     // private WebElement --not to use directly in step definition classes
@@ -53,7 +55,5 @@ public class LoginPage extends BasePage {
         password.sendKeys(passwordValue,Keys.ENTER);
 
     }
-
-
 
 }

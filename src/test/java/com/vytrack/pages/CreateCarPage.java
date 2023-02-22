@@ -3,12 +3,11 @@ package com.vytrack.pages;
 import com.vytrack.utils.BrowserUtils;
 import com.vytrack.utils.Driver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreatCarPage extends BasePage {
+public class CreateCarPage extends BasePage {
 
     @FindBy(css = "[title='Create Car']")
     private WebElement createCarBtn;
@@ -26,7 +25,7 @@ public class CreatCarPage extends BasePage {
         System.out.println("Clicking on 'Create Car' button");
     }
 
-    public void enterLicenPlate(String licensePlate){
+    public void enterLicensePlate(String licensePlate){
         BrowserUtils.enterTxt(licansePlateInputBox,licensePlate);
         BrowserUtils.wait(2);
 
