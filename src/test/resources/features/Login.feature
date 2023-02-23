@@ -29,7 +29,7 @@ Feature: As user, I want to be able to
     When user logs in as a "<role>"
     Then user should see dashboard page
 
-    Examples:           #auto format control+alt+l
+    Examples:               #auto format control+alt+l
       | role          |
       | sales manager |
       | store manager |

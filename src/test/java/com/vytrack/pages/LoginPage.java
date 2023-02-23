@@ -19,6 +19,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='alert alert-error']")
     private WebElement warningMessage;
 
+
     public String getWarningMessageText()  {
        try  {Thread.sleep(5000);}
        catch (InterruptedException e){
