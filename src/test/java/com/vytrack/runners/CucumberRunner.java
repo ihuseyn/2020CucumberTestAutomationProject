@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         dryRun =false,
         //tags="@parametrized_test",
        // tags="@negative_login or @parametrized_test",
-       tags="@with_two_columns",
+       tags="@negative_login",
         publish=true
 
 )
