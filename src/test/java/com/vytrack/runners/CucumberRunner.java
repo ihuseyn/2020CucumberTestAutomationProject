@@ -9,8 +9,10 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
 
-        plugin= {     "rerun:target/rerun.txt"      },
+        plugin= {   "rerun:target/rerun.txt",
+                     "json:target/cucumber.json"
 
+        },
 
         features ="src/test/resources/features",// {you can add many other sources-if you need }
         glue="com/vytrack/step_definitions",
