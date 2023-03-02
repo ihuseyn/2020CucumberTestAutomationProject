@@ -38,7 +38,7 @@ public class CreateCalendarEventStepDefinitions {
 
     @When("user adds new calendar event information")
     public void user_adds_new_calendar_event_information(Map<String, String> data) {
-        data.forEach( (k,v)-> System.out.println("key: "+k+" "+",-> Value: "+v));
+        data.forEach( ( k,v )-> System.out.println("key: "+k+" "+",-> Value: "+v));
         String title=data.get("Title");
         String description=data.get("Description");
 

@@ -27,8 +27,6 @@ public class CreateCalendarEventPage extends BasePage{
    }
 
 
-
-
    public void enterTitle(String txt){
        BrowserUtils.enterTxt(titleInputBox,txt);
 
