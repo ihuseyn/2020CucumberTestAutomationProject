@@ -22,6 +22,7 @@ public class Driver {
         if(driver==null){
             String browser=ConfigurationReader.getProperty("browser");
      //     Jenkins command: test -Dcucumber.filter.tags="@smoke" -Dbrowser="chrome"
+    //      test -Dbrowser="remote-chrome"   or   test -Dbrowser="remote-firefox"
      //     open terminal write mvn test -Dbrowser="edge/firefox/chrome"     will run that browser no need change property
      //     custom environment variables: -Dbrowser
      //     -Dproperty = then read in java System.getProperty("property")
@@ -47,13 +48,33 @@ public class Driver {
                     break;
                 case"remote-chrome":
                     try{
-                 // ChromeOptions chromeOptions=new ChromeOptions();
-                    DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-                    desiredCapabilities.setBrowserName("chrome");
-                    URL gridUrl=new URL("http://44.213.131.55:4444/wd/hub");
-                    driver=new RemoteWebDriver( gridUrl, desiredCapabilities  );
+                        // ChromeOptions chromeOptions=new ChromeOptions();
+                        DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("chrome");
+                        URL gridUrl=new URL("http://44.213.131.55:4444/wd/hub");
+                        driver=new RemoteWebDriver( gridUrl, desiredCapabilities  );
                     } catch(Exception e){
-                       e.printStackTrace();
+                        e.printStackTrace();
+                    }
+                    break;
+                case"remote-firefox":
+                    try{
+                        DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("firefox");
+                        URL gridUrl=new URL("http://44.213.131.55:4444/wd/hub");
+                        driver=new RemoteWebDriver( gridUrl, desiredCapabilities  );
+                    } catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    break;
+                case"remote-edge":
+                    try{
+                        DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("edge");
+                        URL gridUrl=new URL("http://44.213.131.55:4444/wd/hub");
+                        driver=new RemoteWebDriver( gridUrl, desiredCapabilities  );
+                    } catch(Exception e){
+                        e.printStackTrace();
                     }
                     break;
                 default:
