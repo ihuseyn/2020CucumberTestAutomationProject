@@ -7,6 +7,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
@@ -38,7 +39,9 @@ public class Hooks {
     public void teardown(Scenario scenario){
         if (scenario.isFailed()){
             byte[] data= ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.BYTES);
-            scenario.attach( data,"image/png",scenario.getName() );
+            File file= ( (TakesScreenshot) Driver.getDriver() ).getScreenshotAs(OutputType.FILE);
+            scenario.attach( data,"image/png/file/base64",scenario.getName() );
+
         }
 
         Driver.closeDriver();
