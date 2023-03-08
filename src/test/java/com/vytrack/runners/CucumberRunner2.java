@@ -10,23 +10,22 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin= {   "rerun:target/rerun.txt",
-                     "json:target/cucumber.json"
+                     "json:target/cucumber2.json"
         },
 
-      //  {you can add many other sources-if you need }
         features ={
-                "src/test/resources/features/activities"
+                "src/test/resources/features/fleet"
         },
         glue="com/vytrack/step_definitions",
         dryRun =false,
         //tags="@parametrized_test",
        // tags="@negative_login or @parametrized_test",
-       tags="",
+        tags="",
         publish=true
 
 )
 
-public class CucumberRunner {
+public class CucumberRunner2 {
 
 
 

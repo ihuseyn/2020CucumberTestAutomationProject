@@ -19,6 +19,8 @@ https://github.com/damianszczepanik/cucumber-reporting           for the html re
 https://github.com/damianszczepanik/cucumber-reporting/blob/master/pom.xml
 
 
+mvn clean verify -x
+
  */
 
 
