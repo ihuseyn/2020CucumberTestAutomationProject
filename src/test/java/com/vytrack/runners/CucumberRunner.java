@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         dryRun =false,
         //tags="@parametrized_test",
        // tags="@negative_login or @parametrized_test",
-       tags="@smoke and @negative_login",
+       tags="",
         publish=true
 
 )

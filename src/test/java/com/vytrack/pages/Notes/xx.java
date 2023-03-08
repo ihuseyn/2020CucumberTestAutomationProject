@@ -15,6 +15,8 @@ Jenkins: Goals if you write test -Dbrowser="firefox"
 when you write: test -Dcbrowser="remote-firefox" it runs from selenium Grid
 
 
+https://github.com/damianszczepanik/cucumber-reporting           for the html reporting
+https://github.com/damianszczepanik/cucumber-reporting/blob/master/pom.xml
 
 
  */

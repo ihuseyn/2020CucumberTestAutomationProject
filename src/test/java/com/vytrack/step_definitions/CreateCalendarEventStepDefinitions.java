@@ -23,6 +23,7 @@ public class CreateCalendarEventStepDefinitions {
     public void user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
       //  loginPage.login(ConfigurationReader.getProperty("storemanager.username="));
+
     }
 
     @Given("user clicks on create calendar event button")

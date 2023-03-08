@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utils.BrowserUtils;
 import com.vytrack.utils.ConfigurationReader;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -56,5 +57,6 @@ public class LoginPage extends BasePage {
         password.sendKeys(passwordValue,Keys.ENTER);
 
     }
+
 
 }

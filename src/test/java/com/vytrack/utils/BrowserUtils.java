@@ -9,6 +9,7 @@ import java.util.Date;
 
 public class BrowserUtils {
 
+
     private static WebDriverWait wait=new WebDriverWait(Driver.getDriver(),20);
 
     public static void wait(int seconds){
